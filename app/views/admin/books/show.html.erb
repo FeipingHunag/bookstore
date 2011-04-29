@@ -1,0 +1,65 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "图书列表", admin_books_path  %></li>
+      <li><%= link_to "新增图书", new_admin_book_path %></li>
+      <li class="active"><%= link_to "查看", admin_book_path %></li>
+    </ul>
+  </div>
+  <div class="content">
+    <div class="inner">
+
+        <p>
+          <b>标题:</b>
+          <%= @book.title %>
+        </p>
+
+        <p>
+          <b>副标题:</b>
+          <%= @book.subtitle %>
+        </p>
+
+        <p>
+          <b>介绍:</b>
+          <%= @book.description %>
+        </p>
+
+        <p>
+          <b>图片:</b>
+          <%= @book.image %>
+        </p>
+
+        <p>
+          <b>售价:</b>
+          <%= @book.price %>
+        </p>
+
+        <p>
+          <b>页数:</b>
+          <%= @book.page_num %>
+        </p>
+
+        <p>
+          <b>作者:</b>
+          <%= @book.author %>
+        </p>
+
+        <p>
+          <b>出版社:</b>
+          <%= @book.publisher %>
+        </p>
+
+        <p>
+          <b>出版日期:</b>
+          <%= @book.publish_date %>
+        </p>
+      <div class="wat-cf">
+        <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admin_book_path(@book), :class => "button" %>
+        <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admin_book_path(@book), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>
+

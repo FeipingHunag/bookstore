@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.6'
+gem 'rails', '3.0.7'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -12,9 +12,13 @@ gem 'mysql2'
 gem 'yajl-ruby', :require => 'yajl'
 gem 'nokogiri'
 
+gem "jquery-rails"
+gem "meta_where"
+gem "meta_search"
+gem "annotate"
 # Paginator
 # gem "kaminari"
-# gem 'will_paginate', '3.0.pre2'
+ gem 'will_paginate', '3.0.pre2'
 
 # File Uploads
 # gem 'paperclip'
@@ -29,7 +33,7 @@ gem 'nokogiri'
 # gem "haml-rails"
 # gem 'validates_timeliness', '~> 3.0.5'
 # gem 'acts-as-taggable-on'
- 
+
 # gem 'hoptoad_notifier'
 # gem 'newrelic_rpm'
 
@@ -43,6 +47,7 @@ group :test, :development do
   gem "rcov"
   gem "delorean"
   gem "watchr"
+  gem "web-app-theme"
   # gem "capybara"
   # gem 'yard'
   # gem "bluecloth"
@@ -56,7 +61,7 @@ end
 # gem 'typhoeus'
 # gem 'rest-client', :require => 'restclient'
 
-# Memcached client 
+# Memcached client
 # gem "dalli"
 # gem "memcache-client", :require => "memcache"
 
@@ -74,3 +79,4 @@ end
 
 # Full-text search engine
 # gem 'thinking-sphinx', '~> 2.0.2', :require => 'thinking_sphinx'
+

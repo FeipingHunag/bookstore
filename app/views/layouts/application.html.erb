@@ -7,8 +7,23 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="container">
+    <div id="menu">
+        <%= render :partial =>'shared/menu' %>
+    </div>
+    <div id="header">
+      <%= render :partial => 'shared/header' %>
+    </div>
+    <div id="content">
+      <%= render :partial => 'shared/left_section' %>
+      <%= render :partial => 'shared/right_section' %>
+      <div class="cleaner_with_height">&nbsp;</div>
+    </div>
+      <!-- end of content -->
+  <div id="footer"> <a href="#">Home</a> | <a href="#">Search</a> | <a href="#">Books</a> | <a href="#">New Releases</a> | <a href="#">FAQs</a> | <a href="#">Contact Us</a><br />
+    Copyright &copy; 2024 <a href="#"><strong>Your Company Name</strong></a> | Designed by <a href="http://www.88web.org" title="免费CSS网页模板下载">巴巴唔模板网</a> </div>
+  <!-- end of footer -->
+  </div>
 </body>
 </html>
+
