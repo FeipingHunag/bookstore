@@ -2,7 +2,6 @@ Bookstore::Application.routes.draw do
 
    root :to => "root#index"
    get 'admin' => 'admin/books#index', :as => :admin
-   match '/admin' => 'admin::book#index'
    namespace :admin do
      resources :books
    end
