@@ -9,14 +9,18 @@
 <body>
   <div id="container">
     <div id="menu">
-        <%= render :partial =>'shared/menu' %>
+        <%= render :partial =>'layouts/menu' %>
     </div>
     <div id="header">
-      <%= render :partial => 'shared/header' %>
+      <%= render :partial => 'layouts/header' %>
     </div>
     <div id="content">
-      <%= render :partial => 'shared/left_section' %>
-      <%= render :partial => 'shared/right_section' %>
+      <div id="content_left">
+        <%= render :partial => 'layouts/browse' %>
+      </div>
+      <div id="content_right">
+        <%= yield %>
+      </div>
       <div class="cleaner_with_height">&nbsp;</div>
     </div>
       <!-- end of content -->

@@ -5,7 +5,7 @@ class Admin::BooksController < ApplicationController
 
   def index
     @search = Book.search(params[:search])
-    respond_with(:admin,@books = @search.paginate(:page => params[:page], :per_page => 1))
+    respond_with(:admin,@books = @search.paginate(:page => params[:page], :per_page => 5))
   end
 
   def show
@@ -13,7 +13,7 @@ class Admin::BooksController < ApplicationController
   end
 
   def new
-    respond_with(:admin, @books = Book.new)
+    respond_with(:admin, @book = Book.new)
   end
 
   # GET /books/1/edit
@@ -36,7 +36,7 @@ class Admin::BooksController < ApplicationController
 
   # DELETE /books/1
   def destroy
-    if @eskit.destroy
+    if @book.destroy
       flash[:notice] = "Sucessfully destroy book!"
     else
       flash[:error] = @book.errors.first.last

@@ -18,7 +18,12 @@
         </ul>
       </div>
       <div id="main-navigation">
-        <ul class="wat-cf"> <li class="<%= controller.controller_path == 'admin/books' ? 'active' : '' %>"><a href="<%= admin_books_path %>">图书管理</a></li></ul>
+        <ul class="wat-cf">
+         <li class="<%= controller.controller_path == 'admin/books' ? 'active' : '' %>"><a href="<%= admin_books_path %>">图书管理</a>
+         </li>
+         <li class="<%= controller.controller_path == 'admin/categories' ? 'active' : '' %>"><a href="<%= admin_categories_path %>">分类管理</a>
+         </li>
+        </ul>
       </div>
     </div>
     <div id="wrapper" class="wat-cf">

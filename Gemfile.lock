@@ -32,6 +32,8 @@ GEM
     annotate (2.4.0)
     arel (2.0.9)
     builder (2.1.2)
+    carrierwave (0.5.3)
+      activesupport (~> 3.0)
     chronic (0.3.0)
     delorean (1.0.0)
       chronic
@@ -113,6 +115,7 @@ PLATFORMS
 DEPENDENCIES
   SystemTimer
   annotate
+  carrierwave
   delorean
   factory_girl_rails
   jquery-rails

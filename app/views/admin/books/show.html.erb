@@ -20,13 +20,18 @@
         </p>
 
         <p>
-          <b>介绍:</b>
+          <b>类别:</b>
+          <%= @book.category.name %>
+        </p>
+
+        <p>
+          <b>内容简介:</b>
           <%= @book.description %>
         </p>
 
         <p>
           <b>图片:</b>
-          <%= @book.image %>
+          <%= image_tag @book.image.to_s %>
         </p>
 
         <p>

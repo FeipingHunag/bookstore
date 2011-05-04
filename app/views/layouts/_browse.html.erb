@@ -1,0 +1,9 @@
+<div class="content_left_section">
+  <h1>Categories</h1>
+  <ul>
+    <% Category.all.each do |category| -%>
+      <li> <%= link_to category.name, :controller => "root", :action => "browse", :id => category.id %> </li>
+    <% end -%>
+  </ul>
+</div>
+

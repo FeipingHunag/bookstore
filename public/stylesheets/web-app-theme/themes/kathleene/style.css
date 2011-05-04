@@ -175,7 +175,7 @@ hr {
 /* forms */
 
 .form input.text_field, .form textarea.text_area {
-  width: 100%;
+  width: 60%;
   border: 1px solid #2a0000;
 }
 
@@ -191,6 +191,14 @@ hr {
   font-style: italic;
   color: #8C8C8C;
   font-size: .9em;
+  display: block;
+}
+
+.form .invalid {
+  font-style: italic;
+  color: red;
+  font-size: .9em;
+  display: inline;
 }
 
 /* flash-messages */

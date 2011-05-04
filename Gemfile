@@ -22,7 +22,8 @@ gem "annotate"
 
 # File Uploads
 # gem 'paperclip'
-# gem 'carrierwave'
+#gem 'rmagick'
+ gem 'carrierwave'
 
 # gem 'devise', '~> 1.1.7'
 # gem "cancan"

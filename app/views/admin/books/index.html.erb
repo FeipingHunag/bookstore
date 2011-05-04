@@ -8,10 +8,10 @@
   <div class="content">
     <h2 class="title">所有图书</h2>
     <div class="inner">
-    <% form_for @search, :url => admin_books_path, :html => {:method => :get} do |f| -%>
+    <%= form_for @search, :url => admin_books_path, :html => {:method => :get} do |f| %>
       <%= f.text_field :title_or_subtitle_or_description_contains %>
       <%= f.submit '搜索'%>
-    <% end -%>
+    <% end %>
       <table class="table">
         <tr>
           <th class="first">ID</th>
