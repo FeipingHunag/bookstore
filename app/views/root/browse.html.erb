@@ -1,20 +1,2 @@
-
-<% @books.each do |book| -%>
-   <div class="product_box">
-  <h1> <%= book.title %> </h1>
-  <%= image_tag book.image.to_s, :size => '100x150', :alt => book.full_title %>
-  <div class="product_info">
-     <%=raw truncate book.description, :length => 35 %>
-    <h3> <%= book.price %> </h3>
-
-    <div class="buy_now_button"> <%= link_to '加入购物车' %> </div>
-    <div class="detail_button"> <%= link_to '查看详情'  %> </div>
-  </div>
-  <div class="cleaner">&nbsp;</div>
-</div>
-
-<div class= <%= cycle("cleaner_with_width","cleaner_with_height") %>>&nbsp;</div>
-<% end -%>
-<div class="cleaner">&nbsp;</div>
-<%= will_paginate @books  %>
+<%= render 'books' %>
 

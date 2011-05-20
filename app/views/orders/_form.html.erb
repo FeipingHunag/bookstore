@@ -1,0 +1,36 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @order.errors.count %> 个错误
+      发生在提交订单时:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, '姓名' %>
+    <%= f.text_field :name, :size => 40 %>
+  </div>
+  <div class="field">
+    <%= f.label :address , '地址'%>
+    <%= f.text_area :address, :rows => 3, :cols => 45 %>
+  </div>
+  <div class="field">
+    <%= f.label :email, '邮箱' %>
+    <%= f.email_field :email, :size => 40 %>
+  </div>
+  <div class="field">
+    <%= f.label :pay_type, '付款方式' %>
+    <%= f.select :pay_type, Order::PAYMENT_TYPES,
+                  :prompt => '请选择付款方式' %>
+  </div>
+  <div class="actions">
+    <%= f.submit '订单确认' %>
+  </div>
+<% end %>
+

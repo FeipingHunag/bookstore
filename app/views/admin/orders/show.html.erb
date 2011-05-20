@@ -1,0 +1,55 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first"><%= link_to "订单列表", admin_orders_path  %></li>
+      <li><%= link_to "新增订单", new_admin_order_path %></li>
+      <li class="active"><%= link_to "查看订单", admin_order_path %></li>
+    </ul>
+  </div>
+  <div class="content">
+    <div class="inner">
+
+        <p>
+          <b>买家姓名:</b>
+          <%= @order.name %>
+        </p>
+
+        <p>
+          <b>地址:</b>
+          <%= @order.address %>
+        </p>
+
+        <p>
+          <b>邮箱:</b>
+          <%= @order.email %>
+        </p>
+
+        <p>
+          <b>付款方式:</b>
+          <%= @order.pay_type %>
+        </p>
+        <p>
+          <b>订单状态:</b>
+          <%= @order.status %>
+        </p>
+      <div class="wat-cf">
+        <%= link_to image_tag("web-app-theme/icons/application_edit.png", :alt => "#{t("web-app-theme.edit", :default=> "Edit")}") + " " + t("web-app-theme.edit", :default=> "Edit"), edit_admin_order_path(@order), :class => "button" %>
+        <%= link_to image_tag("web-app-theme/icons/cross.png", :alt => "#{t("web-app-theme.delete", :default=> "Delete")}") + " " + t("web-app-theme.delete", :default => "Delete"), admin_order_path(@order), :method => "delete", :class => "button", :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+      </div>
+      <h3>订单详情：</h3>
+       <table class="table">
+        <tr>
+          <th>书名</th>
+          <th>单价</th>
+          <th>数量</th>
+          <th>总价</th>
+        </tr>
+        <%= render @order.line_items %>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>
+

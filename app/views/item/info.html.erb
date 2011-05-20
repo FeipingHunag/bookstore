@@ -1,0 +1,14 @@
+<div id="content_right">
+  <h1> <%= @book.title %> <span>(by <%= @book.author %>)</span></h1>
+  <div class="image_panel"> <%= image_tag @book.image_url, :size => '100x150', :alt => @book.full_title %> </div>
+  <h2> <%= @book.full_title %> </h2>
+  <ul>
+    <li>售价：<%= @book.price %> </li>
+    <li>出版日期：<%= @book.publish_date %></li>
+    <li>出版社：<%= @book.publisher %> </li>
+    <li>页数: 498</li>
+  </ul>
+   <%=raw @book.description %>
+  <div class="cleaner_with_height">&nbsp;</div>
+</div>
+

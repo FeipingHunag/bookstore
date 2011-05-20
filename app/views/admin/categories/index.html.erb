@@ -1,20 +1,20 @@
 <div class="block">
   <div class="secondary-navigation">
     <ul class="wat-cf">
-      <li class="first active"><%= link_to "#{t("web-app-theme.list", :default => "List")}", admin_categories_path  %></li>
-      <li><%= link_to "#{t("web-app-theme.new", :default => "New")}", new_admin_category_path %></li>
+      <li class="first active"><%= link_to "类别列表", admin_categories_path  %></li>
+      <li><%= link_to "新增类别", new_admin_category_path %></li>
     </ul>
   </div>
   <div class="content">
-    <h2 class="title"><%= t("web-app-theme.all", :default => "All")  %> Categories</h2>
+    <h2 class="title"> 所有类别 </h2>
     <div class="inner">
       <table class="table">
         <tr>
           <th class="first">ID</th>
                     <th>
-            <%= t("activerecord.attributes.admin_category.name", :default => t("activerecord.labels.name", :default => "Name")) %>
+            类别名称
           </th>
-                    <th><%= t("web-app-theme.created_at", :default => "Created at")  %></th>
+                    <th> 创建时间 </th>
           <th class="last">&nbsp;</th>
         </tr>
         <% @categories.each do |category| -%>

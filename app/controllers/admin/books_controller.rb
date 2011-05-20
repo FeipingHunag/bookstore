@@ -1,5 +1,4 @@
-class Admin::BooksController < ApplicationController
-  layout 'admin'
+class Admin::BooksController < Admin::BaseController
   before_filter :find_book, :only => [:show, :update, :edit, :destroy]
   respond_to :html, :json
 

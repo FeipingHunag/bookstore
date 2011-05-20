@@ -1,0 +1,17 @@
+<div class="cart_title">你的购物车</div>
+<table>
+  <% for item in @cart.line_items %>
+  <tr>
+    <td><%= item.quantity %>&times;</td>
+    <td><%= item.book.title %></td>
+    <td class="item_price"><%= number_to_currency(item.total_price) %></td>
+  </tr>
+  <% end %>
+  <tr class="total_line">
+    <td colspan="2">Total</td>
+    <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+  </tr>
+</table>
+<%= button_to '结算', new_order_url, :method => :get %>
+<%= button_to '清空购物车', @cart, :method => :delete, :confirm => "你确定要清空购物车？" %>
+

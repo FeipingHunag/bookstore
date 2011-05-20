@@ -25,7 +25,7 @@ gem "annotate"
 #gem 'rmagick'
  gem 'carrierwave'
 
-# gem 'devise', '~> 1.1.7'
+ gem 'devise'
 # gem "cancan"
 # gem "simple_form"
 # gem 'fastercsv' # for Ruby 1.8.7+
@@ -75,7 +75,7 @@ end
 # gem 'ruby-debug19'
 
 # Background Processing
-# gem 'delayed_job'
+ gem 'delayed_job'
 # gem 'resque'
 
 # Full-text search engine

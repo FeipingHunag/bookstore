@@ -1,20 +1,30 @@
 Bookstore::Application.routes.draw do
 
-   root :to => "root#index"
-   get 'admin' => 'admin/books#index', :as => :admin
-   namespace :admin do
-     resources :books
-     resources :categories
-   end
+  devise_for :members
 
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  controller :sessions do
+    get  'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
 
-  # See how all your routes lay out with "rake routes"
+  resources :line_items
 
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-   match ':controller(/:action(/:id(.:format)))'
+  resources :carts
+
+  resources :orders
+
+  get "item/info", :as => :info
+
+  root :to => "root#index"
+
+  get 'admin' => 'admin/books#index', :as => :admin
+
+  namespace :admin do
+    resources :books
+    resources :orders
+    resources :categories
+  end
+
 end
 

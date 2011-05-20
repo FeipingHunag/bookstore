@@ -14,7 +14,7 @@
         <ul class="wat-cf">
           <li><a href="#"><%= t("web-app-theme.profile", :default => "Profile") %></a></li>
           <li><a href="#"><%= t("web-app-theme.settings", :default => "Settings") %></a></li>
-          <li><a href="/logout" class="logout"><%= t("web-app-theme.logout", :default => "Logout") %></a></li>
+          <li> <%= link_to "注销", logout_url, :method => :delete %></li>
         </ul>
       </div>
       <div id="main-navigation">
@@ -23,7 +23,7 @@
          </li>
          <li class="<%= controller.controller_path == 'admin/categories' ? 'active' : '' %>"><a href="<%= admin_categories_path %>">分类管理</a>
          </li>
-        </ul>
+         <li class="<%= controller.controller_path == 'admin/orders' ? 'active' : '' %>"><a href="<%= admin_orders_path %>">订单管理</a></li>
       </div>
     </div>
     <div id="wrapper" class="wat-cf">

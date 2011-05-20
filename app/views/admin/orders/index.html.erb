@@ -1,0 +1,57 @@
+<div class="block">
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li class="first active"><%= link_to "订单列表", admin_orders_path  %></li>
+      <li><%= link_to "新增订单", new_admin_order_path %></li>
+    </ul>
+  </div>
+  <div class="content">
+    <h2 class="title"> 所有订单 </h2>
+    <div class="inner">
+      <table class="table">
+        <tr>
+          <th class="first">ID</th>
+                    <th>买家</th>
+                    <th>总价</th>
+                    <th>状态</th>
+                    <th>购买时间</th>
+          <th class="last">&nbsp;</th>
+        </tr>
+        <% @orders.each do |order| -%>
+        <tr class="<%= cycle("odd", "even") %>">
+          <td>
+            <%= order.id %>
+          </td>
+          <td>
+            <%= order.name %>
+          </td>
+          <td>
+            <%= order.total_price %>
+          </td>
+          <td>
+            <%= order.status %>
+          </td>
+          <td>
+            <%= order.created_at %>
+          </td>
+          <td class="last">
+            <%= link_to "查看", admin_order_path(order) %> |
+            <%= link_to "修改", edit_admin_order_path(order) %> |
+            <%= link_to "删除", admin_order_path(order), :method => :delete, :confirm => "你确定要删除此订单？" %>
+          </td>
+        </tr>
+        <% end -%>
+      </table>
+      <div class="actions-bar wat-cf">
+        <div class="actions">
+        </div>
+
+        <%= will_paginate @orders  %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :sidebar, render(:partial => 'sidebar') -%>
+

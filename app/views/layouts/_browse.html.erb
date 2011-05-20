@@ -1,8 +1,17 @@
 <div class="content_left_section">
-  <h1>Categories</h1>
+  <h1>书籍搜索</h1>
+    <%= form_tag(root_path, :method => :get) do %>
+      <%= text_field_tag :search %>
+      <span style="padding:0 10px">书名、作者、出版社</span> <%= submit_tag '搜索'%>
+    <% end %>
+</div>
+
+
+<div class="content_left_section">
+  <h1>书籍分类</h1>
   <ul>
     <% Category.all.each do |category| -%>
-      <li> <%= link_to category.name, :controller => "root", :action => "browse", :id => category.id %> </li>
+      <li> <%= link_to category.name, root_url(:category => category.name) %> </li>
     <% end -%>
   </ul>
 </div>

@@ -43,5 +43,17 @@ module Bookstore
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      :address => "smtp.gmail.com" ,
+      :port => 587,
+      :domain => "domain.of.sender.net" ,
+      :authentication => "plain" ,
+      :user_name => "feipinghuang" ,
+      :password => "huang900107" ,
+      :enable_starttls_auto => true
+    }
   end
 end
+

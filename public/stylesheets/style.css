@@ -102,11 +102,11 @@ img {
 }
 
 #menu ul li a{
-	float: left;
-	padding: 0 20px;
-	font-size: 12px;
+/*	float: left;*/
+/*	padding: 0 20px;*/
+/*	font-size: 16px;*/
 	font-weight: bold;
-	text-align: center;
+/*	text-align: center;*/
 	text-decoration: none;
 	color: #969547;
 }
@@ -189,6 +189,18 @@ img {
 #content #content_right {
 	float: right;
 	width: 670px;
+}
+
+
+ .cart_title {
+font: 220% bold;
+}
+ .item_price,  .total_line {
+text-align: right;
+}
+ .total_line .total_cell {
+font-weight: bold;
+border-top: 1px solid #595;
 }
 
 
@@ -294,6 +306,35 @@ img {
 
 .product_info p {
 	margin-bottom: 15px;
+}
+
+/* Styles for order form */
+.order_form fieldset {
+    background: #171716;
+    width: 500px;
+}
+.order_form legend {
+    color: #dfd;
+    background: #141;
+    font-family: sans-serif;
+    padding: 0.2em 1em;
+}
+.order_form label {
+    width: 5em;
+    float: left;
+    text-align: right;
+    padding-top: 0.2em;
+    margin-right: 0.1em;
+    display: block;
+}
+.order_form select, .order_form textarea, .order_form input {
+    margin-left: 0.5em;
+}
+.order_form .submit {
+    margin-left: 4em;
+}
+.order_form div {
+    margin: 0.5em 0;
 }
 
 /* end of content */

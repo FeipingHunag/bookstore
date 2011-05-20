@@ -1,6 +1,5 @@
-class Admin::CategoriesController < ApplicationController
-  layout 'admin'
-  before_filter :find_category, :only => [:show, :update, :edit, :destroy]
+class Admin::CategoriesController < Admin::BaseController
+	  before_filter :find_category, :only => [:show, :update, :edit, :destroy]
   respond_to :html, :json
 
   def index
