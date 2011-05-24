@@ -1,13 +1,18 @@
 <div id="special_offers">
-  <p> <span>25%</span> discounts for purchase over $80 </p>
-  <a href="#" style="margin-left: 50px;">Read more...</a>
+  <% if current_cart -%>
+    您总共选择了 <span><%= current_cart.total_books %></span> 本书，总共消费
+    <%=number_to_currency current_cart.total_price %>。 <br/>
+    <%= link_to '清空购物车', current_cart, :method => :delete, :confirm => "你确定要清空购物车？" %> ｜
+     <%= link_to '查看购物车', current_cart %>
+  <% else -%>
+    <p> 你还没有选择书籍 </p>
+  <% end -%>
 </div>
 <div id="new_books">
   <ul>
-    <li>Suspen disse</li>
-    <li>Maece nas metus</li>
-    <li>In sed risus ac feli</li>
+    <% Book.last(3).each do |book| %>
+    <li> <%= link_to book.title, info_path(:id => book.id) %> </li>
+    <% end %>
   </ul>
-<a href="#" style="margin-left: 50px;">Read more...</a>
 </div>
 

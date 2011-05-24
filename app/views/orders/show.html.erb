@@ -1,5 +1,21 @@
-<p id="notice"><%= notice %></p>
+<h1>订单详情</h1>
 
+ <table class="tbitem">
+   <tr>
+     <th>书名</th>
+     <th>单价</th>
+     <th>数量</th>
+     <th>总价</th>
+   </tr>
+   <% @order.line_items.each do |line_item| -%>
+    <tr>
+      <td><%= line_item.book.title %></td>
+      <td><%= line_item.book.price %></td>
+      <td><%= line_item.quantity %></td>
+      <td><%= line_item.total_price %></td>
+    </tr>
+  <% end -%>
+ </table>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to '返回', orders_path %>
+

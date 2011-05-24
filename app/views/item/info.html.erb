@@ -3,7 +3,8 @@
   <div class="image_panel"> <%= image_tag @book.image_url, :size => '100x150', :alt => @book.full_title %> </div>
   <h2> <%= @book.full_title %> </h2>
   <ul>
-    <li>售价：<%= @book.price %> </li>
+    <li>售价：<%= number_to_currency @book.price %> </li>
+    <div class="buy_now_button" style="float:right; margin-right:200px"> <%= link_to '加入购物车', line_items_path(:book_id => @book.id), :method => :post %> </div>
     <li>出版日期：<%= @book.publish_date %></li>
     <li>出版社：<%= @book.publisher %> </li>
     <li>页数: 498</li>

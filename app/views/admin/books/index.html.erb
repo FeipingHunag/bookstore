@@ -31,7 +31,7 @@
             <%= link_to book.full_title, admin_book_path(book) %>
           </td>
           <td>
-            &nbsp;<%= book.price %>&nbsp;
+            <%= number_to_currency book.price %>
           </td>
            <td>
             <%= book.author %>

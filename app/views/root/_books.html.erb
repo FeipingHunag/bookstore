@@ -4,7 +4,7 @@
   <%= image_tag book.image_url, :size => '100x150', :alt => book.full_title %>
   <div class="product_info">
      <%=raw truncate book.description, :length => 35 %>
-    <h3> <%= book.price %> </h3>
+    <h3> <%= number_to_currency book.price %> </h3>
 
     <div class="buy_now_button"> <%= link_to '加入购物车', line_items_path(:book_id => book.id), :method => :post %> </div>
     <div class="detail_button"> <%= link_to '查看详情', :controller => 'item', :action => 'info',  :id => book.id  %> </div>

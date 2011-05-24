@@ -5,7 +5,7 @@
 <p>您还没有下过订单</p>
 
 <% else %>
-  <table>
+  <table class="tbitem">
     <tr>
       <th>邮箱地址</th>
       <th>收货地址</th>
@@ -21,6 +21,7 @@
       <td><%= order.total_price %></td>
       <td><%= order.pay_type %></td>
       <td><%= order.status %></td>
+      <td> <%= link_to '订单详情', order %> </td>
     </tr>
   <% end %>
   </table>

@@ -124,7 +124,7 @@ img {
 	height: 285px;
 	padding: 0;
 	margin: 0;
-	background: url(../images/header_bg.jpg) no-repeat;
+	background: url(../images/header_bg_blank.png) no-repeat;
 }
 
 #header a,a:hover {
@@ -355,4 +355,8 @@ border-top: 1px solid #595;
 	font-weight: normal;
 }
 /* end of footer */
+
+.tbitem       { margin-bottom: 1.4em; width:100%; }
+.tbitem th          { font-weight: bold; background: rgb(90,63,36);}
+.tbitem th,tr,td    { padding: 4px 10px 4px 5px; text-align:center;}
 
